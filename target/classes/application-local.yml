@@ -1,0 +1,23 @@
+server:
+  port: 8200
+  undertow:
+    io-threads: 16
+    worker-threads: 256
+    buffer-size: 1024
+    direct-buffers: true
+spring:
+  profiles:
+    active: local
+  datasource:
+    primary:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: oracle.jdbc.OracleDriver
+      url: jdbc:oracle:thin:@//49.4.88.115:1521/ejkj
+      username: ICBC_PUBLIC_OFFER
+      password: ICBC_PUBLIC_OFFER
+    secondary:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: oracle.jdbc.OracleDriver
+      url: jdbc:oracle:thin:@49.4.88.115:1521:ejkj
+      username: ICBC_ETC
+      password: ICBC_ETC
